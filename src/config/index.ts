@@ -1,4 +1,4 @@
-import { USER_ROLE } from '@/lib/schema/auth'
+import { USER_ROLE } from '@/common/lib/schema/auth'
 
 export const APP_CONFIG = {
   USER: {

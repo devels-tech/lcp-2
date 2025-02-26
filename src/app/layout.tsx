@@ -1,12 +1,14 @@
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 
-import { ThemeProvider } from '@/lib/providers/theme'
-import { NavBar } from '@/components/layout/nav-bar'
-import { Footer } from '@/components/layout/footer'
-import { Toaster } from '@/components/ui/sonner'
+import { ThemeProvider } from '@/common/lib/providers/theme'
 
-import '@/styles/globals.css'
+import { Toaster } from '@/ui/sonner'
+
+import { NavBar } from '@/common/components/layout/nav-bar'
+import { Footer } from '@/common/components/layout/footer'
+
+import '@/common/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,22 +19,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout ({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='es'>
-      <body className={`${inter.className} relative bg-zinc-50 dark:bg-zinc-900`} suppressHydrationWarning>
+    <html lang='es' suppressHydrationWarning>
+      <body className={`${inter.className} relative`}>
         <ThemeProvider
           attribute='class'
-          defaultTheme='system'
-          enableSystem
+          defaultTheme='ligth'
           disableTransitionOnChange
         >
           <NavBar />
-          {children}
+
+          <main>
+            {children}
+          </main>
+
+          <Toaster />
+          <Footer />
         </ThemeProvider>
       </body>
-
-      <Toaster />
-
-      <Footer />
     </html>
   )
 }
