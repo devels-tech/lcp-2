@@ -1,6 +1,7 @@
 'use client'
 
-import { Card, Separator } from '@/ui'
+import { Separator } from '@/ui/separator'
+import { Card } from '@/ui/card'
 
 export const Schedules = () => {
   return (

@@ -3,17 +3,16 @@
 import { type ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
 import { useState, useEffect, useCallback, useMemo } from 'react'
 
-import { DataProperty, DataTableProps } from './types'
 
-import { Pagination } from '@/common/lib/types'
 import { Checkbox } from '@/ui/checkbox'
 
 import { DataTablePagination } from './table-pagination'
 import { DataTableFilters } from './table-filters'
 import { DataTableContent } from './table-content'
 
-export function DataTable<TData>({ columns, data, loading, pagination, selection = false, onSubmit }: DataTableProps<TData>) {
-  const [localPagination, setLocalPagination] = useState<Partial<Pagination>>(null)
+// TODO
+export function DataTable<TData>({ columns, data, loading, pagination, selection = false, onSubmit }: any) {
+  const [localPagination, setLocalPagination] = useState<Partial<any>>(null)
   const [localSearch, setLocalSearch] = useState<Record<string, string>>({})
   const [localFilters, setLocalFilters] = useState<Record<string, any>>({})
   const [selectedRows, setSelectedRows] = useState<TData[]>([])
@@ -57,7 +56,8 @@ export function DataTable<TData>({ columns, data, loading, pagination, selection
       accessorKey: column.id as string,
       header: column.label,
       cell: column.render
-        ? ({ row }) => column.render!(row.original as DataProperty<TData>)
+        // ? ({ row }) => column.render!(row.original as DataProperty<TData>)
+        ? ({ row }) => column.render!(row.original as any)
         : ({ row }) => row.getValue(column.id as string),
     })),
   ], [columns, selectedRows])

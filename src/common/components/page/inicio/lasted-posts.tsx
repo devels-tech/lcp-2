@@ -1,8 +1,12 @@
 'use client'
 
-import { Avatar, AvatarFallback, AvatarImage, Badge, Button, Card, CardContent, CardFooter } from '@/ui'
 import { ImageOff } from 'lucide-react'
 import Link from 'next/link'
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/ui/avatar'
+import { Card, CardContent, CardFooter } from '@/ui/card'
+import { Button } from '@/ui/button'
+import { Badge } from '@/ui/badge'
 
 export const LastedPosts = () => {
   return (

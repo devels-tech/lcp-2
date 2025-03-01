@@ -4,14 +4,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Button } from '@/ui/button'
 import { Label } from '@/ui/label'
 import { Card } from '@/ui/card'
-import { Pagination } from '@/common/lib/types'
+// import { Pagination } from '@/common/lib/types'
 import { Dispatch, SetStateAction } from 'react'
 import { Skeleton } from '../skeleton'
 
 interface DataTablePaginationProps {
   loading: boolean
-  pagination: Partial<Pagination>
-  setLocalPagination: Dispatch<SetStateAction<Partial<Pagination>>>
+  pagination: Partial<any>
+  setLocalPagination: Dispatch<SetStateAction<Partial<any>>>
   tempSearch: Record<string, string>
   tempFilters: Record<string, string>
   onSubmit: (params: any) => void
