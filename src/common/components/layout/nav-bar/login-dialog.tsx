@@ -21,8 +21,8 @@ export function LoginDialog () {
 
   return (
     <Dialog>
-      <DialogTrigger>
-        <User className='h-12 w-12 p-4 rounded-full bg-muted' />
+      <DialogTrigger className='cursor-pointer bg-white shadow border border-zinc-300 w-fit h-fit p-3 rounded-full'>
+        <User size={18} />
         {/* <Image
           src=''
           imageClassName='w-12 h-12'
@@ -30,7 +30,7 @@ export function LoginDialog () {
         /> */}
       </DialogTrigger>
 
-      <DialogContent className='max-w-96'>
+      <DialogContent className='max-w-96 bg-white'>
         <DialogHeader>
           <DialogTitle>Iniciar Sesión</DialogTitle>
           <DialogDescription>

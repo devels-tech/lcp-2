@@ -1,15 +1,16 @@
 'use client'
 
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/ui/dropdown-menu'
 import { LogOut, User } from 'lucide-react'
 import Link from 'next/link'
 
 import { useAuthStore } from '@/common/lib/store/auth'
 import { APP_CONFIG } from '@/config'
 
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/ui/dropdown-menu'
+import { NextImage } from '@/ui/image'
+import { Button } from '@/ui/button'
+import { Badge } from '@/ui/badge'
 import { LoginDialog } from './login-dialog'
-import { NextImage } from '@/common/lib/packages/ui/components/image'
-import { Badge } from '@/common/lib/packages/ui/components/badge'
 
 const { USER } = APP_CONFIG
 
@@ -20,8 +21,10 @@ export const ProfileMenu = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
-        <NextImage src='' containerClassName='h-12 w-12 p-4 rounded-full ' imageClassName='w-12 h-12' />
+      <DropdownMenuTrigger asChild>
+        <Button>
+          <NextImage src='' containerClassName='h-12 w-12 p-4 rounded-full ' imageClassName='w-12 h-12' />
+        </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className='text-sm translate-x-10 w-60' side='top'>

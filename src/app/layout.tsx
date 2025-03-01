@@ -9,6 +9,7 @@ import { NavBar } from '@/common/components/layout/nav-bar'
 import { Footer } from '@/common/components/layout/footer'
 
 import '@/common/styles/globals.css'
+import { QueryProvider } from '@/common/lib/providers/query'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,20 +22,22 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
   return (
     <html lang='es' suppressHydrationWarning>
       <body className={`${inter.className} relative`}>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='ligth'
-          disableTransitionOnChange
-        >
-          <NavBar />
+        <QueryProvider>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='ligth'
+            disableTransitionOnChange
+          >
+            <NavBar />
 
-          <main>
-            {children}
-          </main>
+            <main>
+              {children}
+            </main>
 
-          <Toaster />
-          <Footer />
-        </ThemeProvider>
+            <Toaster />
+            <Footer />
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   )

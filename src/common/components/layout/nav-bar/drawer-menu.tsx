@@ -5,7 +5,7 @@ import { Instagram, MenuIcon, Youtube } from 'lucide-react'
 import { useMediaQuery } from '@/common/lib/hooks/use-media-query'
 import { useEffect, useState } from 'react'
 
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/ui/drawer'  
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/ui/drawer'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/ui/sheet'
 import { Separator } from '@/ui/separator'
 import {  Button } from '@/ui/button'
@@ -37,7 +37,7 @@ export const DrawerMenu = () => {
             </Button>
           </SheetTrigger>
 
-          <SheetContent>
+          <SheetContent className='bg-white'>
             <SheetHeader>
               <SheetTitle>Menu de Acciones</SheetTitle>
               <SheetDescription>

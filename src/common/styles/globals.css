@@ -13,8 +13,8 @@
   --primary: 217.84deg 64.91% 33.53%;
   --primary-foreground: 0 0% 98%;
 
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
+  --secondary: oklch(0.84 0.16 84.42);
+  --secondary-foreground: 240 43.26deg 96.41% 56.27%;
 
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
@@ -44,8 +44,8 @@
   --primary: 0 0% 98%;
   --primary-foreground: 240 5.9% 10%;
 
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
+  --secondary: 43.26deg 96.41% 56.27%;
+  --secondary-foreground: 43.26deg 96.41% 56.27%;
 
   --muted: 240 3.7% 15.9%;
   --muted-foreground: 240 5% 64.9%;
@@ -60,6 +60,11 @@
   --input: 240 3.7% 15.9%;
   --ring: 240 4.9% 83.9%;
 }
+
+@theme {
+    --color-secondary: var(--secondary);
+}
+
 
 /* * {
   @apply border-border;
